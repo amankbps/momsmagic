@@ -14,7 +14,7 @@ const heading2 = React.createElement(
     { id: "title",
       className:"hading",
  },
-    "this is React"
+    "this is amamn "
   );
 const conatiner = React.createElement(
     "h1",
