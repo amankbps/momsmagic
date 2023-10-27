@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Title=()=>{
 
  
@@ -13,8 +15,11 @@ const Title=()=>{
 
   const Header=()=>
 {
+     const [title,setTitle]=useState("Mom'S Magic");
     return(<div className="header">
       <Title/>
+      <h1>{title}</h1>
+      
       <div  className="nav-iteams">
       <ul>
       <li>Home</li>

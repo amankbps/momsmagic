@@ -1,19 +1,35 @@
 
 
-import {card} from "/src/config";
+import {restaurants} from "/src/config";
 import ResturantCard from "/components/ResturantCard";
-import {useState}  from "react";
+import {useState,useEffect}  from "react";
 
 
  function filterdata(searchTxt,resturants) {
 
-    return resturants.filter((res)=>res.action.text.includes(searchTxt));
+    return resturants.filter((res)=>res.info.name.includes(searchTxt));
  }
   
   const Body=()=>{
       //react vailble
-      const[resturants,setResturants]=useState(card);
+      const[resturants,setResturants]=useState([]);
       const [searchTxt,setsearchTxt]=useState("");
+
+      useEffect(()=>{
+        //API call
+        getResturant();
+      },[]);
+
+      async function getResturant() {
+         const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.996673596866396&lng=77.72052761167288&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+         const json=await data.json();
+         
+         console.log(json);
+
+        setResturants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+         
+        
+      }
 
      return(
         <>
