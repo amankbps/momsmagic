@@ -38,3 +38,70 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.shimmer-container {
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+  
+  .shimmer {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  .shim{
+    display: flex;
+  }
+  
+
+  /* Container for the search input and button */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Search input */
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  /* Search button */
+  .search-btn {
+    background-color: #0074d9; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Transition effect on hover */
+  
+    /* Add a hover effect */
+    &:hover {
+      background-color: #37e606; /* Darker background color on hover */
+    }
+  }
+  
